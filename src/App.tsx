@@ -4,6 +4,7 @@ import {fetchQuestion} from './API/API';
 import {QuestionState,Difficulty} from './API/API';
 
 import {GlobalStyle, Wrapper}  from './App.styles';
+import firebase from './firebase';
 
 export type AnswerObject={
     question: string;
@@ -16,6 +17,14 @@ export type AnswerObject={
 const TOTAL_QUESTION=10;
 
 function App() {
+
+  const messaging = firebase.messaging();
+  Notification.requestPermission().then(()=>{
+    return messaging.getToken()
+  }).then((token)=> {
+    
+    console.log('This is Token', token);
+  })
 
   const [loading , setLoading] = useState(false);
   const [questions,setQuestions] =useState<QuestionState[]>([]);

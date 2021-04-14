@@ -1,2 +1,5 @@
 Link:
-polite-tongue.surge.sh
+polite-tongue.surge.shgi
+
+Pwa link:
+https://quiz-app-95967.web.app/
